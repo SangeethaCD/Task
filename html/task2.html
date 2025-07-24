@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome - Crystal Delta</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Modal for View Statement -->
+  <div id="statement-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Statement</h2>
+      <p class="account-number">Account No : <span id="statement-account-no">786543092</span></p>
+      <table class="statement-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Transaction No</th>
+            <th>Credit / Debit</th>
+            <th>Closing balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>30/01/2021</td><td>Mark & Spencers</td><td>325167</td><td class="debit">-2500</td><td>20,000.50</td></tr>
+          <tr><td>30/01/2021</td><td>Kiruba Credit</td><td>325166</td><td class="credit">+2500.50</td><td>22,500.00</td></tr>
+          <tr><td>30/11/2020</td><td>Louis Vitton Glasses</td><td>325165</td><td class="debit">-2500</td><td>20,000.00</td></tr>
+          <tr><td>10/10/2020</td><td>Groceries Store Bill</td><td>325164</td><td class="debit">-2500</td><td>22,500.00</td></tr>
+          <tr><td>30/09/2020</td><td>Kishore Credit</td><td>325163</td><td class="credit">+25000</td><td>25,000.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div class="home-page">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/1000082726.png" alt="crystal delta banking logo" />
+      </div>
+      <button id="logout-button" class="logout-button">Logout</button>
+    </div>
+
+    <!-- Welcome Header -->
+    <div class="header">
+      <h1 id="welcome-message">Welcome!</h1>
+    </div>
+
+    <!-- Main Container -->
+    <div class="account-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="tab active" data-tab="account-summary">Account Summary</div>
+        <div class="tab" data-tab="transfer-fund">Transfer Fund</div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <!-- Account Summary Tab -->
+        <div id="account-summary" class="tab-content active">
+          <h2>Account Summary</h2>
+          <p id="transfer-message" class="success-message"></p>
+
+          <!-- Savings Account -->
+          <div class="account-card">
+            <div class="account-header toggle-header">
+              <div class="left-group">
+                <span class="dropdown-arrow">&#9656;</span> 
+                <strong>Savings Account</strong>
+              </div>
+              <span class="balance">Closing balance : <span class="amount">20,000.50</span></span>
+            </div>
+            <div class="account-details toggle-content">
+              <div class="details-column left">
+                <p><strong>Account No:</strong> 786543092</p>
+                <p><strong>Branch:</strong> Ashok Nagar</p>
+              </div>
+              <div class="details-column right">
+                <p><strong>Name:</strong> Shyam</p>
+                <p><strong>IFSC code:</strong> CDBL0009</p>
+              </div>
+              <div class="full-width-button">
+                <button class="view-btn">View statement</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Account -->
+          <div class="account-card">
+            <div class="account-header toggle-header">
+              <div class="left-group">
+                <span class="dropdown-arrow">&#9656;</span> 
+                <strong>Current Account</strong>
+              </div>
+              <span class="balance">Closing balance : <span class="amount">24,583.00</span></span>
+            </div>
+            <div class="account-details toggle-content">
+              <div class="details-column left">
+                <p><strong>Account No:</strong> 234567890</p>
+                <p><strong>Branch:</strong> MG Road</p>
+              </div>
+              <div class="details-column right">
+                <p><strong>Name:</strong> Shyam</p>
+                <p><strong>IFSC code:</strong> CDBL0010</p>
+              </div>
+              <div class="full-width-button">
+                <button class="view-btn">View statement</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Credit Account -->
+          <div class="account-card">
+            <div class="account-header toggle-header">
+              <div class="left-group">
+                <span class="dropdown-arrow">&#9656;</span> 
+                <strong>Credit Account</strong>
+              </div>
+              <span class="balance">Closing balance : <span class="amount">16,792.10</span></span>
+            </div>
+            <div class="account-details toggle-content">
+              <div class="details-column left">
+                <p><strong>Account No:</strong> 123456789</p>
+                <p><strong>Branch:</strong> Connaught Place</p>
+              </div>
+              <div class="details-column right">
+                <p><strong>Name:</strong> Shyam</p>
+                <p><strong>IFSC code:</strong> CDBL0011</p>
+              </div>
+              <div class="full-width-button">
+                <button class="view-btn">View statement</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transfer Fund Tab -->
+        <div id="transfer-fund" class="tab-content">
+          <h2>Transfer Fund</h2>
+          <form id="transfer-form">
+            <label for="from-account">Choose an Account:</label>
+            <select id="from-account" required>
+              <option value="">—Select an account—</option>
+              <option value="savings">Savings Account</option>
+              <option value="current">Current Account</option>
+              <option value="credit">Credit Account</option>
+            </select>
+
+            <label for="beneficiary-account">Beneficiary Account:</label>
+            <select id="beneficiary-account" required>
+              <option value="">—Select a Beneficiary—</option>
+              <option value="12345678">John Doe</option>
+              <option value="87654321">Jane Smith</option>
+            </select>
+
+            <label for="amount">Amount in Rupees:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required />
+
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" placeholder="Enter remarks (optional)"></textarea>
+
+            <div class="button-row">
+              <button type="reset">Reset</button>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>
