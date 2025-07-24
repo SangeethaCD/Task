@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Contact US</title>
+  </head>
+  <body>
+    <div class="contact-us">
+      <h1>Contact-Us</h1>
+      <form id="form">
+        <p id="error-messages">please fill the required information</p>
+        <label for="firstname">FirstName</label>
+        <input type="text" name="firstname" id="FirstName" required />
+        <label for="lastname">LastName</label>
+        <input type="text" name="Lastname" id="LastName" required />
+        <label for="ContactNumber">Contact Number</label>
+        <input type="text" name="ContactNumber" id="Contact Number" required />
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" required />
+        <label for="location">location</label>
+        <input type="text" name="location" id="location" required />
+        <button type="button" id="submit" onclick="myFunction()">Submit</button>
+      </form>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
