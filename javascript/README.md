@@ -1,0 +1,1 @@
+This folder contains all the javascript logic we have implemented in the training task.
